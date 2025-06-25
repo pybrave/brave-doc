@@ -6,12 +6,13 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'brave',
-  tagline: 'brave are cool',
+  tagline: 'Bioinformatics Reactive Analysis and Visualization Engine',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    experimental_faster: true,
   },
 
   // Set the production url of your site here
