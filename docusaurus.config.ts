@@ -77,7 +77,7 @@ const config: Config = {
       title: 'brave',
       logo: {
         alt: 'brave Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
