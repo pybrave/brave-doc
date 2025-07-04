@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: 软件
 ---
 
@@ -8,7 +8,7 @@ title: 软件
 {
   "name": "去宿主",
 //   "analysisPipline": "bowtie2_remove_host",
-  "parseAnalysisModule": "bowtie2_remove_host",
+  // "parseAnalysisModule": "bowtie2_remove_host",
   "parseAnalysisResultModule": [
     {
       "module": "bowtie2_align_unsorted",
@@ -37,10 +37,19 @@ title: 软件
   ]
 }
 ```
+```
+.
+└── software
+    └── cc1c6f83-6c5a-4de9-89a4-d12fc58dcda9
+        ├── bowtie2_align_unsorted.py
+        ├── main.nf
+        ├── main.py
+        └── samtools_remove_hosts.py
+```
 ## 软件脚本
-+ component_id = `32493b81-e61d-4f80-9088-7f939402ca82` (software component id)
-+ module:`{component_id}`.nextflow.main
-+ path:`{pipeline_dir}`/`{component_id}`/nextflow/main.nf
++ component_id = `cc1c6f83-6c5a-4de9-89a4-d12fc58dcda9` (software component id)
++ module:software.`{component_id}`.main
++ path:`{pipeline_dir}`/software/`{component_id}`/main.nf
 
 ```nextflow
 process bowtie2 {
@@ -123,8 +132,8 @@ workflow  {
 }
 ```
 + component_id = `32493b81-e61d-4f80-9088-7f939402ca82` (software component id)
-+ module:`{component_id}`.py_parse_analysis.bowtie2_remove_host
-+ path:`{pipeline_dir}`/`{component_id}`/py_parse_analysis/`{parseAnalysisModule}`.py
++ module:software.`{component_id}`.main
++ path:`{pipeline_dir}`/software/`{component_id}`/main.py
 
 ```python title='bowtie2_remove_host.py'
 import json
@@ -167,8 +176,8 @@ def parse_data(request_param,db_dict):
 }
 ```
 + component_id = `32493b81-e61d-4f80-9088-7f939402ca82` (software component id)
-+ module:`{component_id}`.py_parse_analysis_result.`{parseAnalysisResultModule[0].analysisMethod}`
-+ path:`{pipeline_dir}`/`{component_id}`/py_parse_analysis_result/`{parseAnalysisResultModule[0].analysisMethod}`.py
++ module:software.`{component_id}`.`{parseAnalysisResultModule[0].analysisMethod}`
++ path:`{pipeline_dir}`/software/`{component_id}`/`{parseAnalysisResultModule[0].analysisMethod}`.py
 
 ```python title='bowtie2_align_unsorted.py'
 import glob
