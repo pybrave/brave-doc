@@ -102,6 +102,13 @@ brave  \
     --use-https
 ```
 
++ open `edit api`
++ input url: `https://localhost:5008`
++ click `Certificate Verification`: Make your browser temporarily add local certificates to the trusted list
++ click `OK`
+
+![](./assest/edit-api.png)
+
 
 
 
