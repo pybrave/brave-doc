@@ -36,9 +36,11 @@ export default function Home(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-
-        <div style={{display:"flex",justifyContent:"center",margin:"2rem 0"}}>
+      <main style={{width:"1000px",margin:"2rem auto"}}>
+        <p>
+          BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
           <img src={require('@site/static/img/brave.png').default} alt="" />
         </div>
         {/* <HomepageFeatures /> */}

@@ -37,11 +37,15 @@ show databases;
 pip install pybrave
 ```
 OR
+
 ```
 git clone https://github.com/pybrave/brave.git
 cd brave
 pip install .
 ```
+> Recommended to install brave from source code
+
+
 ```
 brave  \
     --mysql-url root:123456@localhost:63306/brave \

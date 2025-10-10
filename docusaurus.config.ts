@@ -87,7 +87,11 @@ const config: Config = {
           label: 'Tutorial',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
-        {
+       {
+          href: 'https://pybrave.github.io/brave-ui/',
+          label: 'Brave UI',
+          position: 'right',
+        } ,{
           type: 'localeDropdown',
           position: 'right',
         },{
