@@ -20,8 +20,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Brave Tutorial
+            to="https://pybrave.github.io/brave-ui/">
+            Launch Brave
           </Link>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function Home(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main style={{width:"1000px",margin:"2rem auto"}}>
+      <main style={{maxWidth:"1000px",margin:"2rem auto"}}>
         <p>
           BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
         </p>
