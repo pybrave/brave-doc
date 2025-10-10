@@ -22,7 +22,7 @@ docker run  --rm -p 63306:3306 \
     --default-authentication-plugin=mysql_native_password \
     --character-set-server=utf8mb4 \
     --lower-case-table-names=1 \
-    --collation-server=utf8mb4_unicode_ci 
+    --collation-server=utf8mb4_0900_ai_ci 
 ```
 The above command will automatically create a database named brave. Add the `-d` parameter if you need to run in the background.
 
@@ -35,6 +35,12 @@ show databases;
 ### Step 3: Install and run brave
 ```
 pip install pybrave
+```
+OR
+```
+git clone https://github.com/pybrave/brave.git
+cd brave
+pip install .
 ```
 ```
 brave  \
