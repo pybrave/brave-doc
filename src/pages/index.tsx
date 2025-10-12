@@ -8,7 +8,14 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 import Giscus from '@giscus/react';
-import { Button, Card, Col, Row } from 'antd';
+import { Button, Card, Col, Flex, Row } from 'antd';
+import {
+
+  HeartTwoTone,
+  StarOutlined,
+
+} from '@ant-design/icons';
+
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -89,7 +96,14 @@ export default function Home(): ReactNode {
             </Card>
           </Col>
           <Col xs={24} sm={6} md={6} lg={6} xl={6}>
-            <Card ></Card>
+            <Card extra={<Flex gap={"small"} style={{cursor:"pointer"}} onClick={()=>{
+              window.open("https://github.com/pybrave/brave","_blank")
+            }}> 
+              <HeartTwoTone twoToneColor="#eb2f96" />
+              <StarOutlined  twoToneColor="#eb2f96"  />
+            </Flex>}>
+              <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
+            </Card>
           </Col>
         </Row>
         {/* <script src="https://giscus.app/client.js"
