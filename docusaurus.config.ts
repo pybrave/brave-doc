@@ -46,7 +46,8 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/pybrave/brave-doc/tree/master',
+            // 'https://github.com/pybrave/brave-doc/tree/master',
+            "https://github.dev/pybrave/brave-doc/blob/master"
         },
         // blog: {
         //   showReadingTime: true,
