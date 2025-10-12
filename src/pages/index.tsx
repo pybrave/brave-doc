@@ -96,13 +96,20 @@ export default function Home(): ReactNode {
             </Card>
           </Col>
           <Col xs={24} sm={6} md={6} lg={6} xl={6}>
-            <Card extra={<Flex gap={"small"} style={{cursor:"pointer"}} onClick={()=>{
-              window.open("https://github.com/pybrave/brave","_blank")
-            }}> 
-              <HeartTwoTone twoToneColor="#eb2f96" />
-              <StarOutlined  twoToneColor="#eb2f96"  />
-            </Flex>}>
-              <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
+
+          
+            <Card title="welcome Star" size='small'>
+              <a href="https://github.com/pybrave/brave" target='_blank'>
+                <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
+              </a>
+
+
+            </Card>
+            <Card  style={{marginTop:"1rem"}} title="Welcome Pull Requests" size='small'>
+              <a href="https://github.com/pybrave/brave/graphs/contributors" target='_blank'>
+                <img src="https://contrib.rocks/image?repo=pybrave/brave" />
+              </a>
+
             </Card>
           </Col>
         </Row>
