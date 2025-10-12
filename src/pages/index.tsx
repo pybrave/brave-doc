@@ -44,6 +44,8 @@ export default function Home(): ReactNode {
         <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
           <img src={require('@site/static/img/brave.png').default} alt="" />
         </div>
+
+        
         {/* <script src="https://giscus.app/client.js"
         data-repo="pybrave/brave"
         data-repo-id="R_kgDOPAOzKw"
@@ -60,7 +62,7 @@ export default function Home(): ReactNode {
         crossorigin="anonymous"
         async>
 </script> */}
-        <Giscus
+        {/* <Giscus
           id="comments"
           repo="pybrave/brave"
           repoId="R_kgDOPAOzKw"
@@ -74,7 +76,7 @@ export default function Home(): ReactNode {
           theme="light_high_contrast"
           lang="en"
           loading="lazy"
-        />
+        /> */}
 
         {/* <HomepageFeatures /> */}
       </main>
