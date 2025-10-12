@@ -7,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import Giscus from '@giscus/react';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -36,13 +37,45 @@ export default function Home(): ReactNode {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main style={{maxWidth:"1000px",margin:"2rem auto"}}>
+      <main style={{ maxWidth: "1000px", margin: "2rem auto" }}>
         <p>
           BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
         </p>
         <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
           <img src={require('@site/static/img/brave.png').default} alt="" />
         </div>
+        {/* <script src="https://giscus.app/client.js"
+        data-repo="pybrave/brave"
+        data-repo-id="R_kgDOPAOzKw"
+        data-category="General"
+        data-category-id="DIC_kwDOPAOzK84Cwi0X"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script> */}
+        <Giscus
+          id="comments"
+          repo="pybrave/brave"
+          repoId="R_kgDOPAOzKw"
+          category="General"
+          categoryId="DIC_kwDOPAOzK84Cwi0X"
+          mapping="number"
+          term="2"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="top"
+          theme="light_high_contrast"
+          lang="en"
+          loading="lazy"
+        />
+
         {/* <HomepageFeatures /> */}
       </main>
     </Layout>
