@@ -15,8 +15,8 @@ import type { Props } from '@theme/DocItem/Layout';
 
 import styles from './styles.module.css';
 import Giscus from '@giscus/react';
-import 'antd/dist/reset.css';
-import 'antd/dist/antd.css';
+// import 'antd/dist/reset.css';
+// import 'antd/dist/antd.css';
 /**
  * Decide if the toc should be rendered, on mobile or desktop viewports
  */
