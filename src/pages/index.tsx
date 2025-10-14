@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import React from 'react';
-import 'antd/dist/reset.css';
+// import 'antd/dist/reset.css';
 import styles from './index.module.css';
 import Giscus from '@giscus/react';
 import { Button, Card, Col, Flex, Row } from 'antd';
