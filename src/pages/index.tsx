@@ -119,7 +119,29 @@ export default function Home(): ReactNode {
 
               </Card>
             </Col>
-          </Row>:<Skeleton active></Skeleton>}
+          </Row> :
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "300px",
+            fontSize: "1.2rem",
+            color: "#555"
+          }}>
+            <span className="loading-dots">Loading</span>
+            <style>{`
+        .loading-dots::after {
+          content: '...';
+          animation: dots 1.5s steps(4, end) infinite;
+        }
+        @keyframes dots {
+          0%, 20% { content: ''; }
+          40% { content: '.'; }
+          60% { content: '..'; }
+          80%, 100% { content: '...'; }
+        }
+      `}</style>
+          </div>}
 
         {/* <script src="https://giscus.app/client.js"
         data-repo="pybrave/brave"
