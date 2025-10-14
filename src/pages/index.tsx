@@ -9,13 +9,14 @@ import React from 'react';
 // import 'antd/dist/reset.css';
 import styles from './index.module.css';
 import Giscus from '@giscus/react';
-import { Button, Card, Col, Flex, Row } from 'antd';
+import { Button, Card, Col, Flex, Row, Skeleton } from 'antd';
 import {
 
   HeartTwoTone,
   StarOutlined,
 
 } from '@ant-design/icons';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 
 function HomepageHeader() {
@@ -49,73 +50,77 @@ export default function Home(): ReactNode {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const isBrowser = useIsBrowser();
+  console.log("isBrowser", isBrowser)
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main style={{ maxWidth: "1800px", margin: "2rem auto" }}>
+        {isBrowser ?
 
-        <Row>
-          <Col xs={24} sm={6} md={6} lg={6} xl={6}>
+          <Row>
+            <Col xs={24} sm={6} md={6} lg={6} xl={6}>
 
-            <Card >
-              <p>
-                BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
-              </p>
-              <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
-                <img src={require('@site/static/img/brave.png').default} alt="" />
-              </div>
+              <Card >
+                <p>
+                  BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
+                </p>
+                <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+                  <img src={require('@site/static/img/brave.png').default} alt="" />
+                </div>
 
-            </Card>
+              </Card>
 
-          </Col>
-          <Col xs={24} sm={12} md={12} lg={12} xl={12}
-            style={{
-              padding: isXs ? 0 : "0 1rem",
-              marginTop: isXs ? "1rem" : 0,
-            }}
-          >
-
-
-            <Card >
-              <VideoSwitcher></VideoSwitcher>
-              <Giscus
-                id="comments"
-                repo="pybrave/brave"
-                repoId="R_kgDOPAOzKw"
-                category="General"
-                categoryId="DIC_kwDOPAOzK84Cwi0X"
-                mapping="number"
-                term="2"
-                reactionsEnabled="1"
-                emitMetadata="0"
-                inputPosition="top"
-                theme="light_high_contrast"
-                lang="en"
-                loading="lazy"
-              />
-
-            </Card>
-          </Col>
-          <Col xs={24} sm={6} md={6} lg={6} xl={6}>
+            </Col>
+            <Col xs={24} sm={12} md={12} lg={12} xl={12}
+              style={{
+                padding: isXs ? 0 : "0 1rem",
+                marginTop: isXs ? "1rem" : 0,
+              }}
+            >
 
 
-            <Card title="welcome Star" size='small'>
-              <a href="https://github.com/pybrave/brave" target='_blank'>
-                <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
-              </a>
+              <Card >
+                <VideoSwitcher></VideoSwitcher>
+                <Giscus
+                  id="comments"
+                  repo="pybrave/brave"
+                  repoId="R_kgDOPAOzKw"
+                  category="General"
+                  categoryId="DIC_kwDOPAOzK84Cwi0X"
+                  mapping="number"
+                  term="2"
+                  reactionsEnabled="1"
+                  emitMetadata="0"
+                  inputPosition="top"
+                  theme="light_high_contrast"
+                  lang="en"
+                  loading="lazy"
+                />
+
+              </Card>
+            </Col>
+            <Col xs={24} sm={6} md={6} lg={6} xl={6}>
 
 
-            </Card>
-            <Card style={{ marginTop: "1rem" }} title="Welcome Pull Requests" size='small'>
-              <a href="https://github.com/pybrave/brave/graphs/contributors" target='_blank'>
-                <img src="https://contrib.rocks/image?repo=pybrave/brave" />
-              </a>
+              <Card title="welcome Star" size='small'>
+                <a href="https://github.com/pybrave/brave" target='_blank'>
+                  <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
+                </a>
 
-            </Card>
-          </Col>
-        </Row>
+
+              </Card>
+              <Card style={{ marginTop: "1rem" }} title="Welcome Pull Requests" size='small'>
+                <a href="https://github.com/pybrave/brave/graphs/contributors" target='_blank'>
+                  <img src="https://contrib.rocks/image?repo=pybrave/brave" />
+                </a>
+
+              </Card>
+            </Col>
+          </Row>:<Skeleton active></Skeleton>}
+
         {/* <script src="https://giscus.app/client.js"
         data-repo="pybrave/brave"
         data-repo-id="R_kgDOPAOzKw"
@@ -210,7 +215,7 @@ function VideoSwitcher({
               key={s.id + i}
               onClick={() => setIndex(i)}
               size='small'
-              type={`${i === index ?"primary":"default"}`}
+              type={`${i === index ? "primary" : "default"}`}
               className={`px-3 py-1 rounded-md border ${i === index ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
               aria-pressed={i === index}
             >
