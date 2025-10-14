@@ -76,7 +76,9 @@ export default function Home(): ReactNode {
             }}
           >
 
+
             <Card >
+              <VideoSwitcher></VideoSwitcher>
               <Giscus
                 id="comments"
                 repo="pybrave/brave"
@@ -97,7 +99,7 @@ export default function Home(): ReactNode {
           </Col>
           <Col xs={24} sm={6} md={6} lg={6} xl={6}>
 
-          
+
             <Card title="welcome Star" size='small'>
               <a href="https://github.com/pybrave/brave" target='_blank'>
                 <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
@@ -105,7 +107,7 @@ export default function Home(): ReactNode {
 
 
             </Card>
-            <Card  style={{marginTop:"1rem"}} title="Welcome Pull Requests" size='small'>
+            <Card style={{ marginTop: "1rem" }} title="Welcome Pull Requests" size='small'>
               <a href="https://github.com/pybrave/brave/graphs/contributors" target='_blank'>
                 <img src="https://contrib.rocks/image?repo=pybrave/brave" />
               </a>
@@ -148,5 +150,76 @@ export default function Home(): ReactNode {
         {/* <HomepageFeatures /> */}
       </main>
     </Layout>
+  );
+}
+
+
+
+
+
+function VideoSwitcher({
+  sources = [
+    { id: '5hSGtg-aWw8', platform: 'youtube', title: 'YouTube' },
+    { id: 'BV1vS4bzdEsD', platform: 'bilibili', title: 'Bilibili' },
+  ],
+  defaultIndex = 0,
+  width = '100%',
+  height = 300,
+}) {
+  const [index, setIndex] = useState(defaultIndex);
+  const src = sources[index];
+
+  // Helper: build iframe src for known platforms
+  const iframeSrc = (src) => {
+    if (!src) return '';
+    if (src.platform === 'youtube') {
+      // 使用 YouTube 的 embed URL
+      return `https://www.youtube.com/embed/${src.id}?rel=0&modestbranding=1`;
+    }
+    if (src.platform === 'bilibili') {
+
+      return `https://player.bilibili.com/player.html?bvid=${src.id}`;
+    }
+    if (src.url) return src.url;
+    return '';
+  };
+
+  return (
+    <div className="max-w-full">
+
+      <div className="rounded-md overflow-hidden shadow-sm">
+        {src ? (
+          <iframe
+            title={src?.title || 'video'}
+            src={iframeSrc(src)}
+            width={width}
+            height={height}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          />
+        ) : (
+          <div className="p-4">no video</div>
+        )}
+      </div>
+      <Flex justify='center' >
+        <Flex gap="small">
+          {sources.map((s, i) => (
+            <Button
+              key={s.id + i}
+              onClick={() => setIndex(i)}
+              size='small'
+              type={`${i === index ?"primary":"default"}`}
+              className={`px-3 py-1 rounded-md border ${i === index ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
+              aria-pressed={i === index}
+            >
+              {s.title || `${s.platform}:${s.id}`}
+            </Button>
+          ))}
+        </Flex>
+
+      </Flex>
+
+    </div>
   );
 }
