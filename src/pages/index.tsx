@@ -17,7 +17,7 @@ import {
 
 } from '@ant-design/icons';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-
+import BraveDiagram from '@site/static/img/brave_1_light.svg'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -67,9 +67,10 @@ export default function Home(): ReactNode {
                 <p>
                   BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
                 </p>
-                <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+                <VideoSwitcher></VideoSwitcher>
+                {/* <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
                   <img src={require('@site/static/img/brave.png').default} alt="" />
-                </div>
+                </div> */}
 
               </Card>
 
@@ -81,9 +82,16 @@ export default function Home(): ReactNode {
               }}
             >
 
+              <Card title="How it works?">
+                <Flex justify='center'>
+                  <BraveDiagram></BraveDiagram>
+                </Flex>
+              </Card>
+              <Card  style={{marginTop:"1rem"}}>
 
-              <Card >
-                <VideoSwitcher></VideoSwitcher>
+                {/* <Test></Test> */}
+                {/* <HomepageFeatures></HomepageFeatures> */}
+               
                 <Giscus
                   id="comments"
                   repo="pybrave/brave"

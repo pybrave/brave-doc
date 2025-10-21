@@ -150,6 +150,10 @@ const config: Config = {
             },{
               label: 'pipeline-metagenomics',
               href: 'https://github.com/pybrave/pipeline-metagenomics',
+            },{
+              href: 'https://dashboard.render.com',
+              label: 'Test Server',
+              position: 'right',
             },
           ],
         },
