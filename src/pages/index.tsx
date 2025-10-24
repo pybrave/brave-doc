@@ -58,86 +58,20 @@ export default function Home(): ReactNode {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main style={{ maxWidth: "1800px", margin: "2rem auto" }}>
-        {isBrowser ?
-
-          <Row>
-            <Col xs={24} sm={6} md={6} lg={6} xl={6}>
-
-              <Card >
-                <p>
-                  BRAVE is a visual bioinformatics parameter generator that allows users to configure and run analysis workflows through an intuitive interface. It runs seamlessly in isolated Docker containers, ensuring reproducibility and easy deployment.
-                </p>
-                <VideoSwitcher></VideoSwitcher>
-                {/* <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
-                  <img src={require('@site/static/img/brave.png').default} alt="" />
-                </div> */}
-
-              </Card>
-
-            </Col>
-            <Col xs={24} sm={12} md={12} lg={12} xl={12}
-              style={{
-                padding: isXs ? 0 : "0 1rem",
-                marginTop: isXs ? "1rem" : 0,
-              }}
-            >
-
-              <Card title="How it works?">
-                <Flex justify='center'>
-                  <BraveDiagram></BraveDiagram>
-                </Flex>
-              </Card>
-              <Card  style={{marginTop:"1rem"}}>
-
-                {/* <Test></Test> */}
-                {/* <HomepageFeatures></HomepageFeatures> */}
-               
-                <Giscus
-                  id="comments"
-                  repo="pybrave/brave"
-                  repoId="R_kgDOPAOzKw"
-                  category="General"
-                  categoryId="DIC_kwDOPAOzK84Cwi0X"
-                  mapping="number"
-                  term="2"
-                  reactionsEnabled="1"
-                  emitMetadata="0"
-                  inputPosition="top"
-                  theme="light_high_contrast"
-                  lang="en"
-                  loading="lazy"
-                />
-
-              </Card>
-            </Col>
-            <Col xs={24} sm={6} md={6} lg={6} xl={6}>
+        {/* <p class="text-blue-600 dark:text-sky-400">The quick brown fox...</p> */}
+        <BravePage></BravePage>
 
 
-              <Card title="welcome Star" size='small'>
-                <a href="https://github.com/pybrave/brave" target='_blank'>
-                  <img src={"https://api.star-history.com/svg?repos=pybrave/brave&type=Date"}></img>
-                </a>
-
-
-              </Card>
-              <Card style={{ marginTop: "1rem" }} title="Welcome Pull Requests" size='small'>
-                <a href="https://github.com/pybrave/brave/graphs/contributors" target='_blank'>
-                  <img src="https://contrib.rocks/image?repo=pybrave/brave" />
-                </a>
-
-              </Card>
-            </Col>
-          </Row> :
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "300px",
-            fontSize: "1.2rem",
-            color: "#555"
-          }}>
-            <span className="loading-dots">Loading</span>
-            <style>{`
+        {/* <div style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "300px",
+          fontSize: "1.2rem",
+          color: "#555"
+        }}>
+          <span className="loading-dots">Loading</span>
+          <style>{`
         .loading-dots::after {
           content: '...';
           animation: dots 1.5s steps(4, end) infinite;
@@ -149,7 +83,7 @@ export default function Home(): ReactNode {
           80%, 100% { content: '...'; }
         }
       `}</style>
-          </div>}
+        </div> */}
 
         {/* <script src="https://giscus.app/client.js"
         data-repo="pybrave/brave"
@@ -255,6 +189,98 @@ function VideoSwitcher({
         </Flex>
 
       </Flex>
+
+    </div>
+  );
+}
+
+function BravePage() {
+  return (
+    <div className="w-full px-4 md:px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* 左侧卡片 */}
+      <div className="col-span-1">
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6">
+          <h2 className="text-lg font-semibold mb-4 text-center">Introduction</h2>
+
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            BRAVE is a visual bioinformatics workflow platform, similar to Galaxy, that enables intuitive configuration and execution of both upstream and downstream data analyses.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            It provides an interactive interface that allows users to quickly develop upstream Nextflow analysis pipelines and downstream visualization scripts using containerized applications such as RStudio, VS Code, and Jupyter.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            Once a Nextflow pipeline or visualization script is developed, it can be published to a GitHub repository as a BRAVE “store” app, allowing other analysts to download and use it. Each app maintains isolation, reproducibility, and scalability, leveraging containerized execution to ensure consistent and reliable analyses.
+          </p>
+
+
+        </div>
+      </div>
+
+      {/* 中间主要内容 */}
+      <div className="col-span-1 md:col-span-1 lg:col-span-1">
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6 mb-4">
+          <h2 className="text-lg font-semibold mb-4 text-center">
+            How it works?
+          </h2>
+          <div className="flex justify-center">
+            <BraveDiagram className="w-full h-auto" />
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6">
+          <Giscus
+            id="comments"
+            repo="pybrave/brave"
+            repoId="R_kgDOPAOzKw"
+            category="General"
+            categoryId="DIC_kwDOPAOzK84Cwi0X"
+            mapping="number"
+            term="2"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme="light_high_contrast"
+            lang="en"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      {/* 右侧卡片 */}
+      <div className="col-span-1 space-y-4">
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-4">
+          <h2 className="text-lg font-semibold mb-4 text-center">Welcome Star</h2>
+          <a
+            href="https://github.com/pybrave/brave"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://api.star-history.com/svg?repos=pybrave/brave&type=Date"
+              alt="Star history"
+              className="rounded-lg"
+            />
+          </a>
+        </div>
+
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-4">
+          <h2 className="text-lg font-semibold mb-4 text-center">Welcome Pull Requests</h2>
+          <a
+            href="https://github.com/pybrave/brave/graphs/contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://contrib.rocks/image?repo=pybrave/brave"
+              alt="Contributors"
+              className="rounded-lg"
+            />
+          </a>
+        </div>
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-4">
+          <VideoSwitcher />
+        </div>
+      </div>
 
     </div>
   );
