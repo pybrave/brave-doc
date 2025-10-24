@@ -18,7 +18,7 @@ import {
 } from '@ant-design/icons';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import BraveDiagram from '@site/static/img/brave_1_light.svg'
-
+// import software_metaphlan from "@site/static/img/docusaurus-social-card.jpg"
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -199,11 +199,11 @@ function BravePage() {
     <div className="w-full px-4 md:px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
       {/* 左侧卡片 */}
       <div className="col-span-1">
-        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6">
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6 mb-4">
           <h2 className="text-lg font-semibold mb-4 text-center">Introduction</h2>
 
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            BRAVE is a visual bioinformatics workflow platform, similar to Galaxy, that enables intuitive configuration and execution of both upstream and downstream data analyses.
+            BRAVE is a visual bioinformatics workflow platform, similar to Galaxy, that enables intuitive configuration and visualized execution of both upstream and downstream data analyses.
           </p>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
             It provides an interactive interface that allows users to quickly develop upstream Nextflow analysis pipelines and downstream visualization scripts using containerized applications such as RStudio, VS Code, and Jupyter.
@@ -214,7 +214,18 @@ function BravePage() {
 
 
         </div>
+
+        <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6 mb-4">
+          {/* <img src={software_metaphlan} alt="Example banner" />; */}
+          <img
+            src={require('/static/img/software_metaphlan.gif').default}
+            alt="Example banner"
+          />
+        </div>
       </div>
+
+
+
 
       {/* 中间主要内容 */}
       <div className="col-span-1 md:col-span-1 lg:col-span-1">
