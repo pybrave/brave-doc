@@ -217,6 +217,11 @@ function BravePage() {
 
         <div className="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-6 mb-4">
           {/* <img src={software_metaphlan} alt="Example banner" />; */}
+
+          <h2 className="text-lg font-semibold mb-4 text-center">
+            Example of MetaPhlAn
+          </h2>
+
           <img
             src={require('/static/img/software_metaphlan.gif').default}
             alt="Example banner"
