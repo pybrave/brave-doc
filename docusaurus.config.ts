@@ -96,7 +96,7 @@ const config: Config = {
           type: 'localeDropdown',
           position: 'right',
         },{
-          href: 'https://github.com/pybrave',
+          href: 'https://github.com/pybrave/brave',
           label: 'GitHub',
           position: 'right',
         },
@@ -151,9 +151,8 @@ const config: Config = {
               label: 'pipeline-metagenomics',
               href: 'https://github.com/pybrave/pipeline-metagenomics',
             },{
-              href: 'https://dashboard.render.com',
-              label: 'Test Server',
-              position: 'right',
+              href: 'https://github.com/pybrave/braveR',
+              label: 'braveR',
             },
           ],
         },
