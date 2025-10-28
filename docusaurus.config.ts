@@ -148,8 +148,8 @@ const config: Config = {
               label: 'brave-doc',
               href: 'https://github.com/pybrave/brave-doc',
             },{
-              label: 'pipeline-metagenomics',
-              href: 'https://github.com/pybrave/pipeline-metagenomics',
+              label: 'quick-start',
+              href: 'https://github.com/pybrave/quick-start',
             },{
               href: 'https://github.com/pybrave/braveR',
               label: 'braveR',
