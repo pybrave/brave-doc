@@ -28,13 +28,31 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+
+
         <div className={styles.buttons}>
+
           <Link
             className="button button--secondary button--lg"
             to="https://pybrave.github.io/brave-ui/">
             Launch Brave
           </Link>
         </div>
+
+        <pre
+          style={{
+            backgroundColor: "#1e1e1e",
+            color: "#d4d4d4",
+            padding: "1rem",
+            borderRadius: "0.5rem",
+            overflowX: "auto",
+            marginTop: "1rem",
+            fontFamily: "monospace",
+            fontSize: "0.9rem"
+          }}
+        >
+          curl -s https://raw.githubusercontent.com/pybrave/brave/refs/heads/master/install.sh | bash
+        </pre>
       </div>
     </header>
   );
@@ -59,6 +77,7 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main style={{ maxWidth: "1800px", margin: "2rem auto" }}>
         {/* <p class="text-blue-600 dark:text-sky-400">The quick brown fox...</p> */}
+
         <BravePage></BravePage>
 
 
