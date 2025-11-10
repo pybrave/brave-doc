@@ -48,10 +48,14 @@ function HomepageHeader() {
             overflowX: "auto",
             marginTop: "1rem",
             fontFamily: "monospace",
+            whiteSpace: "pre-wrap",  
             fontSize: "0.9rem"
           }}
         >
-          curl -s https://raw.githubusercontent.com/pybrave/brave/refs/heads/master/install.sh | bash
+          <div>curl -s https://raw.githubusercontent.com/pybrave/brave/refs/heads/master/install.sh | bash</div>
+          <div>cd $HOME/brave-install/store</div>
+          <div>git clone https://github.com/pybrave/quick-start.git</div>
+          <div># Click UI: Workflow - Intsall Components</div>
         </pre>
       </div>
     </header>
