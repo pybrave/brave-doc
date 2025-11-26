@@ -88,7 +88,11 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-       {
+        {
+          href: 'https://bioinfo.online/brave/',
+          label: 'Demo',
+          position: 'right',
+        },{
           href: 'https://pybrave.github.io/brave-ui/',
           label: 'Brave UI',
           position: 'right',
